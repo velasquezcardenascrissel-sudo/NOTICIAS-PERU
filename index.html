@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NOTICIAS PERÚ</title>
+<link rel="stylesheet" href="estilos.css">
+
+<script>
+function cargarPagina(pagina){
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function(){
+if(this.readyState == 4 && this.status == 200){
+document.getElementById("contenido").innerHTML = this.responseText;
+}
+};
+xhttp.open("GET", pagina, true);
+xhttp.send();
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>NOTICIAS PERÚ</h1>
+</header>
+
+<nav>
+<ul>
+<li><a href="#" onclick="cargarPagina('inicio.html')">INICIO</a></li>
+<li><a href="#" onclick="cargarPagina('nacionales.html')">NACIONALES</a></li>
+<li><a href="#" onclick="cargarPagina('deportes.html')">DEPORTES</a></li>
+<li><a href="#" onclick="cargarPagina('espectaculos.html')">ESPECTÁCULOS</a></li>
+<li><a href="#" onclick="cargarPagina('cultura.html')">CULTURA</a></li>
+<li><a href="#" onclick="cargarPagina('contacto.html')">CONTACTO</a></li>
+</ul>
+</nav>
+
+<main id="contenido">
+<h2>Bienvenido</h2>
+<p>Selecciona una sección para ver las noticias.</p>
+</main>
+
+<footer>
+<p>© 2026 Portal de Noticias</p>
+</footer>
+
+</body>
+</html>
